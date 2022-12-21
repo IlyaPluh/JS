@@ -31,3 +31,32 @@ keys.push("more");
 
 //console.log(keys);
 
+// const player = Object.create(
+//   {},
+//   {  
+//     level: {
+//       value: 1,
+//       writable: true,
+//     },  
+//     nextLevel: {
+//       // количество опыта для следующего уровня на основе существующего
+//       get() {
+//         return Math.round((this.level*10)*(this.level*10));
+//       },
+//   },
+// });
+
+// console.log(player.level)
+
+class Player {
+  constructor(level){
+      this.level = level;
+      this.nextLevel = Math.round((this.level*10)*(this.level*10));
+  }
+      // get recalculation() {
+      //   return Math.round((this.level*10)*(this.level*10));
+      // }
+}
+let lev = 4
+const player = new Player(lev)
+console.log(player)
