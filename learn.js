@@ -53,10 +53,7 @@ class Player {
       this.level = level;
       this.nextLevel = Math.round((this.level*10)*(this.level*10));
   }
-      // get recalculation() {
-      //   return Math.round((this.level*10)*(this.level*10));
-      // }
 }
 let lev = 4
 const player = new Player(lev)
-console.log(player)
+console.log(player.nextLevel)
