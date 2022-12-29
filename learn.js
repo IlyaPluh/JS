@@ -56,4 +56,54 @@ class Player {
 }
 let lev = 4
 const player = new Player(lev)
-console.log(player.nextLevel)
+//console.log(player.nextLevel)
+
+
+let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];
+
+let readMessages = new WeakSet();
+
+readMessages.add(messages[0]);
+readMessages.add(messages[1]);
+readMessages.add(messages[0]);
+
+let readMap = new WeakMap();
+
+readMap.set(messages[0], new Date(2022, 12, 12));
+
+//console.log("Read message 0: " + readMessages.has(messages[0]));
+
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+function sumSalaries(salary) {
+  return Object.values(salaries).reduce((a, b) => a + b, 0)
+  // let sum = 0
+  // for (let value of Object.values(salaries)) {
+  //   sum += value;
+  // }
+  // return sum
+}
+
+//console.log(sumSalaries(salaries));
+
+
+let user = {
+  name: 'John',
+  age: 30
+};
+
+function count(obj) {
+  return Object.keys(obj).length;
+}
+
+//console.log(count(user))
+
