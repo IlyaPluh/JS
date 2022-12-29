@@ -140,4 +140,17 @@ function topSalary(salary) {
 
 //console.log(topSalary(salaries2))
 
+let date = new Date(2022, 11, 28);
+date.setDate(date.getDate() + 5);
+//console.log(date);
+
+//console.log(new Date().getTimezoneOffset());
+
+let start = Date.now();
+for (let i = 0; i < 100000; i++) {
+  let doSomething = i * i * i;
+}
+let end = Date.now();
+//console.log( `Цикл отработал за ${end - start} миллисекунд` );
+
 
