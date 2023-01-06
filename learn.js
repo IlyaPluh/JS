@@ -174,3 +174,26 @@ let pockets = {
 //console.log(head.pillow)
 
 
+Function.prototype.defer = function(ms) {
+  setTimeout(this, ms);
+};
+function f() {
+  console.log("Hi");
+}
+f.defer(1000);
+
+Function.prototype.defer2 = function(ms) {
+  let f = this;
+  return function(...args) {
+    setTimeout(() => f.apply(this, args), ms);
+    }
+};
+function f2(a, b) {
+  console.log( a + b );
+}
+f2.defer2(1000)(1, 2);
+
+let obj = Object.create(null);
+let key = ("What's the key?", "__proto__");
+obj[key] = "some value";
+console.log(obj[key]);
