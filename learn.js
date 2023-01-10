@@ -178,7 +178,7 @@ Function.prototype.defer = function(ms) {
   setTimeout(this, ms);
 };
 function f() {
-  console.log("Hi");
+  //console.log("Hi");
 }
 f.defer(1000);
 
@@ -189,14 +189,14 @@ Function.prototype.defer2 = function(ms) {
     }
 };
 function f2(a, b) {
-  console.log( a + b );
+  //console.log( a + b );
 }
 f2.defer2(1000)(1, 2);
 
 let obj = Object.create(null);
 let key = ("What's the key?", "__proto__");
 obj[key] = "some value";
-console.log(obj[key]);
+//console.log(obj[key]);
 
 
 // ваш код, который добавляет метод dictionary.toString
@@ -214,8 +214,62 @@ dictionary.__proto__ = "test"; // здесь __proto__ -- это обычный 
 
 // только apple и __proto__ выведены в цикле
 for(let key in dictionary) {
-  console.log(key); // "apple", затем "__proto__"
+  //console.log(key); // "apple", затем "__proto__"
 }
 
 // ваш метод toString в действии
-console.log(dictionary); // "apple,__proto__"
+//console.log(dictionary); // "apple,__proto__"
+
+Promise.reject ('a')
+.catch (p=>p+'b')
+.catch (p=>p+'c')
+.then (p=>p+'d')
+.finally(p=>p+'e')
+.then (p=>console. log(p))
+
+const a = {}
+function clear (obj) {
+obj. x =
+40
+obj
+=
+null
+}
+clear (a);
+console.log(a); // ?
+
+var x = 10;
+function bar (funArg) {
+var X
+=
+30;
+funArg();}
+function foo () {
+console. log(x);}
+foo. x =
+20;
+bar.x =
+40;
+bar (foo);
+
+setTimeout (function timeout() {
+  console.log('1');
+}, 0);
+  Promise.resolve('2').then(console.log);
+  console.log ('3');
+
+const str = 'h2h40h'
+const result = str
+.split ('h')
+.map (s => s +10)
+.filter(s=>s.length < 4)
+console.log (result);
+
+var a = {};
+  (function b(a) {
+  a.a = 10;
+  a = null;
+  }) (a);
+  console.log(a);
+
+  
