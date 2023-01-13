@@ -227,16 +227,16 @@ Promise.reject ('a')
 .finally(p=>p+'e')
 .then (p=>console. log(p))
 
-const a = {}
-function clear (obj) {
-obj. x =
-40
-obj
-=
-null
-}
-clear (a);
-console.log(a); // ?
+// let a = {}
+// function clear (obj) {
+// obj. x =
+// 40
+// obj
+// =
+// null
+// }
+// clear (a);
+// console.log(a);
 
 var x = 10;
 function bar (funArg) {
@@ -265,11 +265,28 @@ const result = str
 .filter(s=>s.length < 4)
 console.log (result);
 
-var a = {};
-  (function b(a) {
-  a.a = 10;
-  a = null;
-  }) (a);
-  console.log(a);
+// let a = {};
+//   (function b(a) {
+//   a.a = 10;
+//   a = null;
+//   }) (a);
+//   console.log(a);
 
-  
+  function makeAdder(x) {
+    return function(y) {
+      return x + y
+    }
+  }
+  let add5 = makeAdder(5); 
+  let add10 = makeAdder(10);
+  console.log(add5(2));   
+  console.log(add10(2));
+
+let a=5
+let b=10
+let c=15
+function one() { 
+    return arguments 
+} 
+console.log(one(a,b,c))
+
