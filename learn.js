@@ -291,8 +291,12 @@ function one() {
 console.log(one(a,b,c))
 
 function camelize(str) {
-  return str.split('-').map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+  return str.split('-').map((el, index) => index == 0 ? el : el[0].toUpperCase() + el.slice(1)
   ).join('')
   }
+console.log(camelize("webkit-transition-hello"))
 
-console.log(camelize("-webkit-transition"))
+let strok = "-webkit-transition-hello";
+let arra = strok.split('-');
+console.log(arra)
+
