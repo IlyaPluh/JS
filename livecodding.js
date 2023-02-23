@@ -36,9 +36,19 @@ function convertVariableType(variable, type) {
     }
   }  
   console.log(convertVariableType('', 'bool'))
+
 // 2. написать функцию которая принимает на вход строку и заменяет каждую букву на её порядковый номер в алфавите, 
 // если строка не содержит букв, игнорировать её и вернуть текст что в строке нету букв
 // например при вызове такой функии с параметром ("абаба") возвращается 12121
+
+let abc = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+function convertLettersToNumber(str) {
+  str = str.split()
+  
+  console.log(str[0][2])
+}
+convertLettersToNumber('klnaklnav')
+
 // 3. написать функцию которая принимает на вход строку где каждое слово содержит цифру от 1 до 9, 
 // а потом сортирует заданную строку по возрастанию чисел
 // например при вызове функции с параметром ("4of Fo1r pe6ople g3ood th5e the2") 
