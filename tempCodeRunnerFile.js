@@ -1,9 +1,5 @@
- function makeAdder(x) {
-    return function(y) {
-      return x + y
-    }
-  }
-  let add5 = makeAdder(5); 
-  let add10 = makeAdder(10);
-  console.log(add5(2));   
-  console.log(add10(2));
+ // проверяем, что все числа от 1 до 9
+  // const isValid = numbers.every((num) => num >= 1 && num <= 9);
+  // if (!isValid) {
+  //   throw new Error('Строка должна содержать только числа от 1 до 9');
+  // }

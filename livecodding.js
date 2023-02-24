@@ -41,7 +41,9 @@ function convertVariableType(variable, type) {
 // если строка не содержит букв, игнорировать её и вернуть текст что в строке нету букв
 // например при вызове такой функии с параметром ("абаба") возвращается 12121
 
-let abc = [
+
+function convertLettersToNumber(str) {
+  let abc = [
   'A', 'B', 'C', 'D', 'E', 'F',
   'G', 'H', 'I', 'J', 'K', 'L',
   'M', 'N', 'O', 'P', 'Q', 'R',
@@ -49,7 +51,6 @@ let abc = [
   'Y', 'Z'
 ]
 let cba = []
-function convertLettersToNumber(str) {
   str = str.split('')
   str.forEach(el1 => {
     abc.forEach(function(el2, index) {
@@ -66,6 +67,49 @@ return cba
 // а потом сортирует заданную строку по возрастанию чисел
 // например при вызове функции с параметром ("4of Fo1r pe6ople g3ood th5e the2") 
 // возвращается "Fo1r the2 g3ood 4of th5e pe6ople"
+
+function sortStringByNumber(str) {
+  // создаем массив из слов в строке
+  const words = str.split(' ');
+
+  // создаем массив из чисел, которые содержатся в каждом слове
+  const numbers = words.map((word) => {
+    // находим цифры в слове
+    const digits = word.match(/\d+/);
+    // if (!digits) {
+    //   throw new Error(`Слово ${word} не содержит цифр`);
+    // }
+    // возвращаем первую найденную цифру
+    return Number(digits[0]);
+  });
+
+  // проверяем, что все числа от 1 до 9
+  // const isValid = numbers.every((num) => num >= 1 && num <= 9);
+  // if (!isValid) {
+  //   throw new Error('Строка должна содержать только числа от 1 до 9');
+  // }
+
+  // создаем объект, где ключами являются числа, а значениями - массивы слов, содержащих эти числа
+  const groups = {};
+  numbers.forEach((num, index) => {
+    if (!groups[num]) {
+      groups[num] = [];
+    }
+    groups[num].push(words[index]);
+  });
+  // сортируем группы по ключу (числу) и объединяем их в один массив слов
+  const sortedWords = [];
+  for (let num = 1; num <= 9; num++) {
+    if (groups[num]) {
+      sortedWords.push(groups[num]);
+    }
+  }
+
+  // возвращаем отсортированную строку
+  return sortedWords.join(' ');
+}
+//console.log(sortStringByNumber("4of Fo1r pe6ople g3ood th5e the2"))
+
 // 4. написать функцию которая принимает на вход имя человека которого нужно приветствовать, 
 // если это имя "Анатолий" то выводить текст "Привет моя любовь", если любое другое то "Привет {имя}"
 // например при вызове функции с параметрами ("Ваня") возвращается "Привет Ваня".
