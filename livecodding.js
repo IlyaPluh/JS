@@ -35,19 +35,32 @@ function convertVariableType(variable, type) {
         throw new Error(`Неверный тип данных: ${type}`);
     }
   }  
-  console.log(convertVariableType('', 'bool'))
+  //console.log(convertVariableType('', 'bool'))
 
 // 2. написать функцию которая принимает на вход строку и заменяет каждую букву на её порядковый номер в алфавите, 
 // если строка не содержит букв, игнорировать её и вернуть текст что в строке нету букв
 // например при вызове такой функии с параметром ("абаба") возвращается 12121
 
-let abc = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+let abc = [
+  'A', 'B', 'C', 'D', 'E', 'F',
+  'G', 'H', 'I', 'J', 'K', 'L',
+  'M', 'N', 'O', 'P', 'Q', 'R',
+  'S', 'T', 'U', 'V', 'W', 'X',
+  'Y', 'Z'
+]
+let cba = []
 function convertLettersToNumber(str) {
-  str = str.split()
-  
-  console.log(str[0][2])
+  str = str.split('')
+  str.forEach(el1 => {
+    abc.forEach(function(el2, index) {
+      if (el1.toUpperCase() == el2) {
+        cba.push(index+1)
+      }
+  })
+})
+return cba
 }
-convertLettersToNumber('klnaklnav')
+//console.log(convertLettersToNumber('Ilya Pluh'))
 
 // 3. написать функцию которая принимает на вход строку где каждое слово содержит цифру от 1 до 9, 
 // а потом сортирует заданную строку по возрастанию чисел
@@ -135,13 +148,13 @@ function nameValidation(name) {
         && name.trim().split(' ').every(Boolean)
         && name.trim().split(' ').every(el => el.charAt(0).toUpperCase() === el.charAt(0))
 }
-console.log(nameValidation('Ab'))
-console.log(nameValidation('Poligraf Poligrafovich'))
-console.log(nameValidation('  Username Name Username Name Usernameasdf  '))
-console.log(nameValidation('AA'))
-console.log(nameValidation('AaaaAaa AaAaaA'))
-console.log(nameValidation('RAW RAW'))
-console.log(nameValidation('A  A'))
+// console.log(nameValidation('Ab'))
+// console.log(nameValidation('Poligraf Poligrafovich'))
+// console.log(nameValidation('  Username Name Username Name Usernameasdf  '))
+// console.log(nameValidation('AA'))
+// console.log(nameValidation('AaaaAaa AaAaaA'))
+// console.log(nameValidation('RAW RAW'))
+// console.log(nameValidation('A  A'))
 
 // 4. "Дан массив из n чисел a1, a2, a3, ..., aN.
 // Среднее арифметическое (или среднее) — это сумма этих чисел, деленная на n.
@@ -159,9 +172,10 @@ console.log(nameValidation('A  A'))
 //Если чисел в номере больше чем надо в маске - игнорируем оставшиеся ненужные, если чисел меньше чем надо в маске - кидаем ошибку
 // 1. Напишите программу,которая будет возвращать true, если первый переданный аргумент (строка) заканчивается вторым аргументом (тоже строкой).
 
-function includArg2 (a, b) {
+function includArg (a, b) {
     return a.substr(a.length - b.length) === b 
 }
+//console.log(includArg('ilya', 'plya'))
 
 // 2. Напишите программу, которая возвращает время после полуночи в миллисекундах, при условии чтона часах время показано в виде h hours, m minutes and s seconds после полуночи.
 // 3. Напишите программу которая на вход принимает массив из 3 цифр в диапазоне от 0 до 10 и выводит их словами, каждое на отдельной строке
