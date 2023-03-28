@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 
+const multer  = require('multer');
+const upload = multer(); // создаем экземпляр Multer
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/python_req_1', (req, res) => {
+app.get('/python_req_1', upload.none(), (req, res) => {
   const name = req.query.name;
   const age = req.query.age;
   const salary = req.body.salary;
@@ -20,7 +23,7 @@ app.get('/python_req_1', (req, res) => {
   res.status(200).json(result);
 });
 
-app.all('/python_req_2', (req, res) => {
+app.all('/python_req_2', upload.none(), (req, res) => {
   const method = req.method;
 
   if (method === 'GET') {
