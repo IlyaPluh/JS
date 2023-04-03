@@ -290,27 +290,3 @@ function one() {
 } 
 console.log(one(a,b,c))
 
-function camelize(str) {
-  return str.split('-').map((el, index) => index == 0 ? el : el[0].toUpperCase() + el.slice(1)
-  ).join('')
-  }
-console.log(camelize("webkit-transition-hello"))
-
-let strok = "-webkit-transition-hello";
-let arra = strok.split('-');
-console.log(arra)
-
-function filterrange(arr, min, max) {
-  return arr.filter(el => el > min && el < max);
-}
-console.log(filterrange([5, 3, 8, 1], 1, 8))
-  // let newarr = []
-  // arr.forEach(el => {
-  //   if (el > min && el < max) {
-  //     newarr.push(el)
-  //   }
-  // })
-  // console.log (newarr)
-//}
-//filterrange([5, 3, 8, 1], 1, 8)
-
