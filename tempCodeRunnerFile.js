@@ -1,11 +1,13 @@
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 29 };
-
-let arr = [ vasya, petya, masha ];
-
-function getAverageAge(users) {
-    return users.reduce((prev, user) => prev + user.age, 0) / users.length;
-  }
-
-console.log(getAverageAge(arr))
+function groupById(array) {
+  return array.reduce((obj, value) => {
+    obj[value.id] = value;
+    return obj;
+  }, {})
+}
+let users = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
+];
+let usersById = groupById(users);
+console.log(usersById)
