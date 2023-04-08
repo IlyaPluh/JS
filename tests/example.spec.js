@@ -10,4 +10,4 @@ test('New test grinfer', async({ page }) => {
    await page.screenshot({path: 'img/logIn.jpg'})
 })
 
-//yarn playwright test
+//npx playwright test
