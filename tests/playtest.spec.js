@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test';
-//const {test, expect} = require('@playwright/test')
+//import { test, expect } from '@playwright/test';
+const {playtest, expect} = require('@playwright/playtest')
 
-test('test', async ({ page }) => {
+playtest('playtest', async ({ page }) => {
   await page.goto('https://playwright-todomvc.antonzimaiev.repl.co/#/');
   await page.getByPlaceholder('What needs to be done?').click();
   await page.getByPlaceholder('What needs to be done?').click();
@@ -10,4 +10,5 @@ test('test', async ({ page }) => {
   await page.getByRole('listitem').filter({ hasText: 'hi man' }).getByRole('checkbox').check();
   await page.getByRole('link', { name: 'Completed' }).click();
   await page.getByRole('link', { name: 'Active' }).click();
+  await page.screenshot({path: 'img/test.jpg'})
 });
