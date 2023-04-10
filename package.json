@@ -1,5 +1,5 @@
 {
-  "name": "js",
+  "name": "unittest",
   "version": "1.0.0",
   "description": "",
   "main": "fetch.js",
@@ -15,5 +15,8 @@
   "devDependencies": {
     "@playwright/test": "^1.32.2",
     "playwright": "^1.32.2"
+  },
+  "directories": {
+    "test": "tests"
   }
 }
